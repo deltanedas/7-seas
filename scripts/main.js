@@ -18,7 +18,7 @@ if (!this.global.sevenSeas) {
 			players.each(cons(yarr));
 		}));
 	}));
-	Events.on(EcentType.PlayerJoinEvent, run(e => {
+	Events.on(EventType.PlayerJoinEvent, run(e => {
 		print("Event " + e)
 		yarr(e.player);
 	}));
