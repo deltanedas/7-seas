@@ -5,7 +5,6 @@ if (!this.global.sevenSeas) {
 	const pirates = /CODEX|IGGGAMES/;
 
 	const yarr = player => {
-		print("player " + player)
 		if (player.name.match(pirates)) {
 			Call.sendChatMessage("actual retard pirating a free game");
 		}
@@ -18,8 +17,7 @@ if (!this.global.sevenSeas) {
 			players.each(cons(yarr));
 		}));
 	}));
-	Events.on(EcentType.PlayerJoinEvent, run(e => {
-		print("Event " + e)
+	Events.on(EventType.PlayerChatEvent, run(e => {
 		yarr(e.player);
 	}));
 }
