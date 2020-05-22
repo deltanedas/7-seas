@@ -10,14 +10,14 @@ if (!this.global.sevenSeas) {
 		}
 	};
 
-	Events.on(EventType.WorldLoadEvent, run(e => {
+	Events.on(EventType.WorldLoadEvent, cons(e => {
 		// Players are added shortly after loading
 		Time.run(60, run(() => {
 			const players = Vars.playerGroup.all();
 			players.each(cons(yarr));
 		}));
 	}));
-	Events.on(EventType.PlayerChatEvent, run(e => {
+	Events.on(EventType.PlayerChatEvent, cons(e => {
 		yarr(e.player);
 	}));
 }
