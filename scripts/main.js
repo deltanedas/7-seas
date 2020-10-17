@@ -8,32 +8,28 @@
 
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU General Public License for more details.
 
 	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
-// Prevent event handling multiple times
-if (!this.global.sevenSeas) {
-	this.global.sevenSeas = true;
 
-	const pirates = /CODEX|IGGGAMES/;
+const pirates = /CODEX|IGGGAMES/;
 
-	const yarr = player => {
-		if (player.name.match(pirates)) {
-			Call.sendChatMessage("actual retard pirating a free game");
-		}
-	};
+const yarr = player => {
+	if (player.name.match(pirates)) {
+		Call.sendChatMessage("actual retard pirating a free game");
+	}
+};
 
-	Events.on(EventType.WorldLoadEvent, cons(e => {
-		// Players are added shortly after loading
-		Time.run(60, run(() => {
-			const players = Vars.playerGroup.all();
-			players.each(cons(yarr));
-		}));
-	}));
-	Events.on(EventType.PlayerChatEvent, cons(e => {
-		yarr(e.player);
-	}));
-}
+Events.on(WorldLoadEvent, e => {
+	// Players are added shortly after loading
+	Time.run(60, () => {
+		Groups.player.each(yarr);
+	});
+});
+
+Events.on(PlayerChatEvent, e => {
+	yarr(e.player);
+});
