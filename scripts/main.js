@@ -33,6 +33,7 @@ if (!this.global.sevenSeas) {
 			players.each(cons(yarr));
 		}));
 	}));
+
 	Events.on(EventType.PlayerChatEvent, cons(e => {
 		yarr(e.player);
 	}));
