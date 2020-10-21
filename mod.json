@@ -4,5 +4,6 @@
 	"author": "DeltaNedas",
 	"description": "Scolds pirates in multiplayer. Now for v6!",
 	"version": "2.1.0",
-	"hidden": true
+	"hidden": true,
+	"minGameVersion": 105
 }
