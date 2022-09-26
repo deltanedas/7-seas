@@ -3,6 +3,7 @@
 	"displayName": "[#00aaff]7 [red]Seas[]",
 	"author": "DeltaNedas",
 	"description": "Scolds pirates in multiplayer.",
-	"version": "1.1.0",
-	"hidden": true
+	"version": "2.1.0",
+	"hidden": true,
+	"minGameVersion": 137
 }
