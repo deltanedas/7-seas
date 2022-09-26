@@ -18,7 +18,7 @@
 if (!this.global.sevenSeas) {
 	this.global.sevenSeas = true;
 
-	const pirates = /CODEX|IGGGAMES/;
+	const pirates = /CODEX|IGGGAMES|FreeTP\.Org/;
 
 	const yarr = player => {
 		if (player.name.match(pirates)) {
